@@ -1,1 +1,1 @@
-# asp.net-razor-page---social-media-platform
+# ASP.NET Razor Pages - Social Media Platform
