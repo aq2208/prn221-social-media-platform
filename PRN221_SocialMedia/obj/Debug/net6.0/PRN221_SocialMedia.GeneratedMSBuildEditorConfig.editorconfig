@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PRN221_SocialMedia
+build_property.RootNamespace = PRN221_SocialMedia
+build_property.ProjectDir = C:\Users\DELL\Documents\Ky 8 - SUMMER 2024\PRN221\PRN221_SocialMedia\PRN221_SocialMedia\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\DELL\Documents\Ky 8 - SUMMER 2024\PRN221\PRN221_SocialMedia\PRN221_SocialMedia
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcQWNjZXNzRGVuaWVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/AddComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcQWRkQ29tbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/AddMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcQWRkTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/DeletePost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcRGVsZXRlUG9zdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/Feeds.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcRmVlZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/Messages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcTWVzc2FnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/UpdatePost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcVXBkYXRlUG9zdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/SocialMedia/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29jaWFsTWVkaWFcVXNlclByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Ky 8 - SUMMER 2024/PRN221/PRN221_SocialMedia/PRN221_SocialMedia/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-s6phvdxftf

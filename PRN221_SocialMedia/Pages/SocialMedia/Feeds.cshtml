@@ -1,0 +1,200 @@
+﻿@page
+@model PRN221_SocialMedia.Pages.SocialMedia.FeedsModel
+@{
+}
+
+<h2 style="padding-left: 250px;">NEW FEED</h2>
+
+<!-- Add New Post Button -->
+<button style="margin-left: 250px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPostModal">
+    Add New Post
+</button>
+
+<!-- New Post Modal -->
+<div class="modal fade" id="addPostModal" tabindex="-1" aria-labelledby="addPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPostModalLabel">Add New Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group" style="display: none">
+                        <label asp-for="Input.UserId">UserId</label>
+                        <input asp-for="Input.UserId" class="form-control" value="@Model.LogedInUserId">
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.Title" class="form-label">Title</label>
+                        <input asp-for="Input.Title" class="form-control" required />
+                        <span asp-validation-for="Input.Title" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Input.Image" class="form-label">Image (Optional)</label>
+                        <input asp-for="Input.Image" class="form-control"/>
+                        <span asp-validation-for="Input.Image" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Input.Description" class="form-label">Description</label>
+                        <textarea asp-for="Input.Description" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Existing Post Display Section -->
+<div class="container mt-4" style="padding-right: 250px; padding-left: 250px;">
+    @if (Model.Posts != null && Model.Posts.Count > 0)
+    {
+        foreach (var post in Model.Posts)
+        {
+            <div class="post-card mb-4" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+                <div class="row">
+                    <div class="col-md-2" style="padding:0px;">
+                        @if (@post.AuthorProfileImage != null)
+                        {
+                            <a href="/SocialMedia/UserProfile?userProfileEmail=@post.AuthorEmail">
+                                <img style="margin-left: 25px; margin-top: 10px; border: 1px solid;" src="data:image/jpeg;base64,@post.AuthorProfileImage" alt="Profile Image" class="profile-image" />
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="/SocialMedia/UserProfile?userProfileEmail=@post.AuthorEmail">
+                                <img style="margin-left: 25px; margin-top: 10px; border: 1px solid;" src="~/images/default_profile.jpg" alt="Profile Image" class="profile-image" />
+                            </a>
+                        }
+                    </div>
+                    <div class="col-md-10">
+                        <h5 style="margin: 0px; margin-top: 14px;">
+                            @post.AuthorUsername
+                        </h5>
+                        <small class="text-muted">Posted on @post.CreatedAt.ToString("HH:mm, MMMM d, yyyy")</small>
+                        <h4 style="margin-top: 15px;">@post.Title</h4>
+                        <p>@post.Description</p>
+                        @if (post.PostImage != null)
+                        {
+                            <img src="data:image/jpeg;base64,@post.PostImage" alt="Post Image" class="post-image" />
+                        }
+
+                        <button style="margin-top: 10px;" class="btn btn-primary" onclick="showPostDetails(@post.PostId)">
+                            Show Details
+                        </button>
+
+                        <!-- Details Section (Initially hidden) -->
+                        <div class="post-details" id="post-details-@post.PostId" style="display: none;">
+                            <div class="comments" id="comments-@post.PostId">
+                                <h4>Comments:</h4>
+                                @foreach (var comment in post.Comments)
+                                {
+                                    <div class="comment">
+                                        <p><strong>@comment.User.Username:</strong> @comment.Content</p>
+                                    </div>
+                                }
+                            </div>
+                            <form class="comment-form" data-post-id="@post.PostId" onsubmit="addComment(event, @post.PostId)">
+                                <div class="mb-3">
+                                    <textarea name="commentText" class="form-control" placeholder="Add a comment..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    } else
+    {
+        <p class="text-muted">No posts available</p>
+    }
+    
+</div>
+
+<style>
+    body {
+        background-color: #F0F2F5;
+    }
+
+    .profile-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    .post-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .post-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #fff;
+    }
+</style>
+
+<!-- Add Bootstrap JS for modal functionality -->
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showPostDetails(postId) {
+            var detailsSection = document.getElementById('post-details-' + postId);
+            if (detailsSection.style.display === 'none') {
+                detailsSection.style.display = 'block';
+            } else {
+                detailsSection.style.display = 'none';
+            }
+        }
+
+        function addComment(event, postId) {
+            console.log("Submit form add comment with postId: " + postId);
+
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the form element
+            var form = event.target;
+
+            // Use FormData to easily extract form values
+            var formData = new FormData(form);
+
+            // Retrieve the comment text from the FormData object
+            var commentText = formData.get('commentText'); // 'commentText' should match the name attribute of the textarea
+
+            // For debugging: log the comment text
+            console.log('Comment Text:', commentText);
+
+            // Add the post ID to the form data
+            formData.append('PostId', postId);
+
+            fetch('/SocialMedia/AddComment?postId=' + postId + '&content=' + commentText, {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    // Reload comments for the post
+                    console.log("Add new comment successful!");
+
+                    // Create new comment HTML
+                    var newCommentHtml = `<div class="comment" id="comment-${result.commentId}">
+                                        <p><strong>${result.authorUsername}:</strong> ${commentText}</p>
+                            </div>`;
+
+                    // Append the new comment to the comments section
+                    var commentsSection = document.getElementById('comments-' + postId);
+                    commentsSection.insertAdjacentHTML('beforeend', newCommentHtml);
+
+                    // Optionally, clear the textarea
+                    form.reset();
+                } else {
+                    alert('Failed to add comment');
+                }
+            });
+        }
+    </script>
+}

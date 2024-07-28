@@ -1,0 +1,63 @@
+﻿@page
+@model PRN221_SocialMedia.Pages.SocialMedia.RegisterModel
+@{
+}
+
+<h3>REGISTER NEW ACCOUNT</h3>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Input.Email"></label>
+        <input asp-for="Input.Email" class="form-control" />
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Input.Password"></label>
+        <input asp-for="Input.Password" class="form-control" />
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Input.ConfirmPassword"></label>
+        <input asp-for="Input.ConfirmPassword" class="form-control" />
+        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Input.Username"></label>
+        <input asp-for="Input.Username" class="form-control" />
+        <span asp-validation-for="Input.Username" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Input.PhoneNumber"></label>
+        <input asp-for="Input.PhoneNumber" class="form-control" />
+        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="button" class="btn btn-secondary" onclick="location.href='@Url.Page("/SocialMedia/Login")'">Login</button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    @if (Model.IsRegistrationSuccessful)
+    {
+        <script type="text/javascript">
+            // Show success popup
+            alert("REGISTER NEW ACCOUNT SUCCESSFUL!");
+
+            // Get the email from the form
+            var email = '@Model.Input.Email';
+
+            // Redirect to the login page with the email as a query parameter
+            window.location.href = '/SocialMedia/Login?email=' + encodeURIComponent(email);
+        </script>
+    }
+}

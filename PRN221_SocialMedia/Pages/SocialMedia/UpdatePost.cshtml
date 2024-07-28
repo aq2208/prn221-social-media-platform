@@ -1,0 +1,49 @@
+﻿@page
+@model PRN221_SocialMedia.Pages.SocialMedia.UpdatePostModel
+@{
+}
+
+<h2>Update Post</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="PostId" />
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PostImage" class="form-label">Image (Optional)</label>
+        <input asp-for="PostImage" id="postImageInput" class="form-control" />
+        <img id="postImagePreview" src="@Model.PostImageUrl" alt="Post Image Preview" style="max-width: 100%; margin-top: 10px;" />
+        @*@if (Model.PostImageUrl != null)
+        {
+            <img src="@Model.PostImageUrl" alt="Post Image" style="max-width: 100%; margin-top: 10px;" />
+        }*@
+        <span asp-validation-for="PostImage" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Post</button>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('postImageInput').addEventListener('change', function (event) {
+            var file = event.target.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('postImagePreview').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            } else {
+                // Clear the preview if no file is selected
+                document.getElementById('postImagePreview').src = '@Model.PostImageUrl';
+            }
+        });
+    </script>
+}
